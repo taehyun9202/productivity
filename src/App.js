@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Home from './components/Home'
+import UserAvatar from './components/UserAvatar'
 
 function App() {
+  const [ userName, setUserName ] = useState('')
+
+  useEffect(() => {
+    const userName =  prompt('Enter Your Name')
+    setUserName(userName)
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <UserAvatar user={userName} />
+      <Home user={userName} />
     </div>
   );
 }
