@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './UserAvatar.css'
 function UserAvatar(props) {
     return (
         <div className="userAvatar">
